@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -61.2, "left": 99.8, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -128.2,
+      "left": 134.4,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd2",
+      "top": 25.6,
+      "left": 332,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "uno:13", "led1:A", "gold", [ "v-28.2", "h-0.2" ] ],
+    [ "uno:GND.1", "led1:C", "black", [ "v-9", "h-0.3" ] ],
+    [
+      "btn1:1.l",
+      "uno:GND.1",
+      "black",
+      [ "h-38.4", "v38.4", "h0", "v0", "h0", "v-38.4", "h9.6" ]
+    ],
+    [ "uno:7", "btn1:2.r", "violet", [ "v-57", "h31.8" ] ],
+    [ "lcd2:GND", "uno:GND.3", "black", [ "h-153.6", "v124.8" ] ],
+    [ "lcd2:VCC", "uno:5V", "red", [ "h-182.4", "v124.9" ] ],
+    [ "lcd2:SDA", "uno:A4", "magenta", [ "h-9.6", "v0.2", "h0", "v0" ] ],
+    [ "lcd2:SCL", "uno:A5", "green", [ "h-76.8", "v105.9" ] ]
+  ],
+  "dependencies": {}
+}
